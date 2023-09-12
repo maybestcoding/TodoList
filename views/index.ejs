@@ -1,0 +1,27 @@
+<%- include('partials/header') -%>
+
+ <div class ="card">
+  <div class="header">
+    <h1>📝 <%= listTitle %></h1>
+  </div>
+  <div>
+  <p class ="date"><%= date %></p>
+  </div>
+ </div>
+
+ <div class="box">
+  <img class = "calenderImg" width ="400" src="/images/calender.png" alt="">    
+  <% newItem.forEach(item =>  { %>
+    <div class ="item">
+      <input type="checkbox" />
+      <p class ="item"><%= item %></p>
+    </div>
+  <%  }); %> 
+       
+  <form class="item" action="/" method="post" >
+    <input type="text" name="todoList" placeholder ="What is in your mind?" autocomplete="off">
+    <button type="submit" name="list" value = <%= listTitle %>> + </button>
+  </form>
+ </div>
+
+<%- include('partials/footer') -%>
